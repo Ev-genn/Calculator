@@ -30,10 +30,12 @@ public class Number extends Calculator{
                             }
                             }
                         }
+
+                        else {
+                            System.out.println("неправильная запись");
+                            System.exit(-1);
                     }
-                    else {
-                        System.out.println("неправильная запись");
-                        System.exit(-1);
+
                     }
                     num[n] = Character.getNumericValue(arr[i]);
                 }
