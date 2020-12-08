@@ -1,5 +1,6 @@
 package com.evgenn;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Change {
@@ -18,7 +19,7 @@ public class Change {
     }
     public static String romResulte() {
         double result = Calculator.result;
-        String str = "", str1 = "";
+        String str = "", str1 = " ";
         int n = 0;
         double rem = 0;
         boolean romRem = false;
@@ -77,7 +78,11 @@ public class Change {
                 n -=1;
             }
         }
-        if (romRem) str += str1;
+        if (romRem) {
+            str += str1;
+            System.out.println("результат деления в римском исчислении округляется до унций");
+            System.out.println("('S' - 6/12(или 0.5), '.' - 1/12");
+        }
         return (str);
     }
 }
