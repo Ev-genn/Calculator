@@ -23,18 +23,17 @@ public class Number extends Calculator{
                                     num[n] = 10;
                                     i++;
                                     continue;
-                                }
-                                else {
+                                } else {
                                     System.out.println("число больше 10");
                                     System.exit(-1);
-                            }
+                                }
                             }
                         }
+                            else {
+                                System.out.println("неправильная запись");
+                                System.exit(-1);
 
-                        else {
-                            System.out.println("неправильная запись");
-                            System.exit(-1);
-                    }
+                        }
 
                     }
                     num[n] = Character.getNumericValue(arr[i]);
@@ -65,7 +64,7 @@ public class Number extends Calculator{
         }
         a = num[0];
         b = num[1];
-        if (a == b || b == 0) {
+        if (a == 0 || b == 0) {
             System.out.println("неправильное выражение");
             System.exit(0);
         }
