@@ -18,21 +18,41 @@ public class Change {
     }
     public static String romResulte() {
         double result = Calculator.result;
-        String str = "";
+        String str = "", str1 = "";
         int n = 0;
-        if (result % 1 != 0) n = (int) Math.round(result);
+        double rem = 0;
+        boolean romRem = false;
+        if (result % 1 != 0) {
+            n = (int)Math.floor(result);
+            rem = result%1; //записываем остаток от деления
+            rem = Math.floor(rem/0.083);//извлекаем кол-во унций
+            romRem = true;
+            while (rem != 0){
+                if (rem >=6){
+                    rem -= 6;
+                    str1 += "S";
+                }
+                if (rem>0){
+                    rem -=1;
+                    str1 += ".";
+                }
+            }
+        }
         else n = (int) result;
         if (n<0) {
             str += "-";
             n = -n;
         }
-        if (n == 0) return (str = "O");
+        if (n == 0) {
+            if (romRem) return  (str1);
+            else return (str = "O");
+        }
         for (;n!=0;) {
             if (n >= 50) {
                 str += "L";
                 n -= 50;
             }
-            if (n >= 40 && n < 50) {
+            if (n >= 40 && n < 49) {
                 str += "XL";
                 n -= 40;
             }
@@ -57,6 +77,7 @@ public class Change {
                 n -=1;
             }
         }
+        if (romRem) str += str1;
         return (str);
     }
 }

@@ -24,7 +24,7 @@ public class Calculator {
         if (arr[0] >= 49 && arr[0] <= 57) Number.arabNumber(arr); // арабский калькулятор
         else if (arr[0] == 73 || arr[0] == 86 || arr[0] == 88) Number.romeNumber(arr); // римский калькулятор
         else {
-            throw new Exception ("Число должно быть от 1 до 10");
+            throw new Exception ("Числа должны быть от 1 до 10");
         }
         }
         catch (Exception ex){
